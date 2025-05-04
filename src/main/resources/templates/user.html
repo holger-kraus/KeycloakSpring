@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>User Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            margin-right: 10px;
+        }
+        .content {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .attributes {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+    
+    <div class="content">
+        <h1>User Profile</h1>
+        <p>Welcome <span th:text="${name}">User</span>!</p>
+        <p>Email: <span th:text="${email}">email@example.com</span></p>
+        
+        <div sec:authorize="hasRole('USER')">
+            <p>You have the USER role</p>
+        </div>
+        
+        <div sec:authorize="hasRole('ADMIN')">
+            <p>You have the ADMIN role</p>
+        </div>
+        
+        <h2>Your OAuth2 Attributes</h2>
+        <div class="attributes">
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+                <tr th:each="attr : ${attributes}">
+                    <td th:text="${attr.key}">Key</td>
+                    <td th:text="${attr.value}">Value</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
