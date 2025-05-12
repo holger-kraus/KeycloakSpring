@@ -1,3 +1,4 @@
-/Users/holger/workspace/holger/src/main/java/com/example/holger/HolgerApplication.java
-/Users/holger/workspace/holger/src/main/java/com/example/holger/config/SecurityConfig.java
-/Users/holger/workspace/holger/src/main/java/com/example/holger/controller/HomeController.java
+/Users/holger/SpringSecurityPlayground/KeycloakSpring/src/main/java/com/example/holger/HolgerApplication.java
+/Users/holger/SpringSecurityPlayground/KeycloakSpring/src/main/java/com/example/holger/controller/HomeController.java
+/Users/holger/SpringSecurityPlayground/KeycloakSpring/src/main/java/com/example/holger/config/CustomAuthenticationSuccessHandler.java
+/Users/holger/SpringSecurityPlayground/KeycloakSpring/src/main/java/com/example/holger/config/SecurityConfig.java

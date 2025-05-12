@@ -1,3 +1,4 @@
 com/example/holger/HolgerApplication.class
+com/example/keycloakdemo/config/CustomAuthenticationSuccessHandler.class
 com/example/holger/config/SecurityConfig.class
 com/example/holger/controller/HomeController.class
